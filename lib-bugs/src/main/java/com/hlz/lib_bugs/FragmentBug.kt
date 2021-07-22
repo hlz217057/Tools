@@ -90,9 +90,6 @@ abstract class BaseCenterFragmentDialog : DialogFragment() {
     protected abstract val layout: Int
     protected abstract fun initView()
 
-    /**
-     * todo 动态设置高度
-     */
     open fun setHeight(): Int {
         return ScreenUtils.getScreenHeight() / 2
     }
