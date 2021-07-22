@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.text.Spanned
+import android.view.Choreographer
 import android.widget.TextView
 import com.hlz.lib_expansion.*
 
@@ -37,4 +38,5 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.tv).text = s.substringV2(2,3)
     }
+
 }
