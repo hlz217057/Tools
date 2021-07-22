@@ -2,3 +2,5 @@ rootProject.name = "MyTools"
 include ':app'
 include ':lib-class-expansion'
 include ':lib-expansion'
+include ':lib-bugs'
+include ':lib-comment'
