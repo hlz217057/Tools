@@ -5,4 +5,6 @@
 ##### 3.避免常用采坑集
 
 # lib-expansion 针对系统类进行拓展常用函数
+##### 1. List.kt
+##### 2.String.kt
 
