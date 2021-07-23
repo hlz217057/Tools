@@ -57,6 +57,8 @@ fun String.logi() {
     Log.i(TAG, "logi: -------------打印开始----------")
     if (this.isNullOrEmpty()) {
         Log.i(TAG, "logi: ---------字符为空---------")
+        Log.i(TAG, "logi: --------------打印结束---------")
+        return
     }
     Log.i(TAG, "logi: ---------------data: " + this)
     Log.i(TAG, "logi: --------------打印结束---------")
@@ -67,6 +69,8 @@ fun String.loge() {
     Log.e(TAG, "loge: -------------打印开始----------")
     if (this.isNullOrEmpty()) {
         Log.e(TAG, "loge: ---------字符为空---------")
+        Log.e(TAG, "loge: --------------打印结束---------")
+        return
     }
     Log.e(TAG, "loge: ---------------data: " + this)
     Log.e(TAG, "loge: --------------打印结束---------")
