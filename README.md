@@ -16,13 +16,13 @@
 [
     <br>//todo lengthV2 获取字符长度
     <br> //todo textV2 获取文本
-    (27, 3) //todo substringV2 截取字符
-    (41, 3) //todo fromHtmlV2 字符转html
-    (47, 3) //todo fontColor color = #4599F7
-    (53, 3) //todo fontColorFromHtml color = #4599F7
-    (59, 3) //todo logi 打印
-    (72, 3) //todo loge 打印
-    (85, 3) //todo showToast toast
+    <br> //todo substringV2 截取字符
+    <br> //todo fromHtmlV2 字符转html
+    <br> //todo fontColor color = #4599F7
+    <br> //todo fontColorFromHtml color = #4599F7
+    <br> //todo logi 打印
+    <br> //todo loge 打印
+    <br> //todo showToast toast
 ]
 ##### 3.Any.kt
 ##### 4.Config.kt
