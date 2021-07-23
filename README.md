@@ -14,8 +14,8 @@
 ##### 1. List.kt
 ##### 2.String.kt
 [
-    (15, 3) //todo lengthV2 获取字符长度
-    (21, 3) //todo textV2 获取文本
+    <br>//todo lengthV2 获取字符长度
+    <br> //todo textV2 获取文本
     (27, 3) //todo substringV2 截取字符
     (41, 3) //todo fromHtmlV2 字符转html
     (47, 3) //todo fontColor color = #4599F7
