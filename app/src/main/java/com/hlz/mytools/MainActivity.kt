@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         val s = "123456789"
 
+        list.loge()
+
         findViewById<TextView>(R.id.tv).text = s.substringV2(2,3)
     }
 
