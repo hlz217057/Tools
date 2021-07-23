@@ -1,7 +1,6 @@
 package com.hlz.lib_expansion
 
 import android.text.Html
-import android.text.Spanned
 import android.util.Log
 
 /**
@@ -38,11 +37,21 @@ fun String.substringV2(startIndex: Int, endIndex: Int): String {
 }
 
 //todo fromHtmlV2
-fun String.fromHtmlV2(): Spanned {
-    if (this.isNullOrEmpty()) ""
+fun String.fromHtmlV2(): CharSequence {
+    if (this.isNullOrEmpty()) return ""
     return Html.fromHtml(this)
 }
-
+//todo fontColor color = #4599F7
+fun String.fontColor(color:String):String{
+    if (this.isNullOrEmpty())return ""
+    return "<font color='${color}'>${this}</font>"
+}
+//todo fontColorFromHtml color = #4599F7
+fun String.fontColorFromHtml(color:String): CharSequence{
+    if (this.isNullOrEmpty())return ""
+    return this.fontColor(color).fromHtmlV2()
+}
+//todo logi
 fun String.logi() {
     if (!isOpenLog) return
     Log.i(TAG, "logi: -------------打印开始----------")
@@ -52,7 +61,7 @@ fun String.logi() {
     Log.i(TAG, "logi: ---------------data: " + this)
     Log.i(TAG, "logi: --------------打印结束---------")
 }
-
+//todo loge
 fun String.loge() {
     if (!isOpenLog) return
     Log.e(TAG, "loge: -------------打印开始----------")
