@@ -7,10 +7,15 @@
 # lib-comment 公共工具集
 ##### 1. ScreenUtils
 ##### 2.ToastUtils
+类库：
+1. api 'com.google.code.gson:gson:2.8.7'
 
 # lib-expansion 针对系统类进行拓展常用函数
 ##### 1. List.kt
 ##### 2.String.kt
+##### 3.Any.kt
+##### 4.Config.kt
+
 
 # lib-bugs bug集
 ##### 1. FragmentBug.kt
