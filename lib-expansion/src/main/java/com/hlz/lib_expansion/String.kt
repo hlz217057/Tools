@@ -12,20 +12,26 @@ import android.widget.Toast
 private const val TAG = "String"
 
 
+
 //todo lengthV2 获取字符长度
-fun String.lengthV2(): Int {
+fun String?.lengthV2(): Int {
     if (this.isNullOrEmpty()) return 0
     return this.length
 }
 
 //todo textV2 获取文本
-fun String.textV2(): String {
+fun String?.text(): String {
     if (this.isNullOrEmpty()) return ""
+    return this
+}
+//todo textV2 获取文本
+fun String?.textInt(defNum: Int = 0): String {
+    if (this.isNullOrEmpty()) return defNum.toString()
     return this
 }
 
 //todo substringV2 截取字符
-fun String.substringV2(startIndex: Int, endIndex: Int): String {
+fun String?.substringV2(startIndex: Int, endIndex: Int): String {
     if (this.isNullOrEmpty()) return ""
     var start = 0
     var end = endIndex
@@ -39,25 +45,25 @@ fun String.substringV2(startIndex: Int, endIndex: Int): String {
 }
 
 //todo fromHtmlV2 字符转html
-fun String.fromHtmlV2(): CharSequence {
+fun String?.fromHtmlV2(): CharSequence {
     if (this.isNullOrEmpty()) return ""
     return Html.fromHtml(this)
 }
 
 //todo fontColor color = #4599F7
-fun String.fontColor(color: String): String {
+fun String?.fontColor(color: String): String {
     if (this.isNullOrEmpty()) return ""
     return "<font color='${color}'>${this}</font>"
 }
 
 //todo fontColorFromHtml color = #4599F7
-fun String.fontColorFromHtml(color: String): CharSequence {
+fun String?.fontColorFromHtml(color: String): CharSequence {
     if (this.isNullOrEmpty()) return ""
     return this.fontColor(color).fromHtmlV2()
 }
 
 //todo logi 打印
-fun String.logi() {
+fun String?.logi() {
     if (!isOpenLog) return
     Log.i(TAG, "logi: -------------打印开始----------")
     if (this.isNullOrEmpty()) {
@@ -70,7 +76,7 @@ fun String.logi() {
 }
 
 //todo loge 打印
-fun String.loge() {
+fun String?.loge() {
     if (!isOpenLog) return
     Log.e(TAG, "loge: -------------打印开始----------")
     if (this.isNullOrEmpty()) {
@@ -83,6 +89,6 @@ fun String.loge() {
 }
 
 //todo showToast toast
-fun String.showToast(context: Context) {
+fun String?.showToast(context: Context) {
     Toast.makeText(context, "" + this, Toast.LENGTH_SHORT).show()
 }

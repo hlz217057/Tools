@@ -1,22 +1,24 @@
 package com.hlz.lib_expansion
 
+import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import com.google.gson.Gson
 
 private const val TAG = "List"
 
-inline fun <T> ArrayList<T>.sizeV2(): Int {
+fun <T> ArrayList<T>?.sizeV2(): Int {
     if (this.isNullOrEmpty()) return 0
     return this.size
 }
 
-fun <T> ArrayList<T>.removeV2(position: Int) {
+fun <T> ArrayList<T>?.removeV2(position: Int) {
     if (this.isNullOrEmpty()) return
     if (position >= this.size) return
     this.removeAt(position)
 }
 
-fun <T> ArrayList<T>.logi() {
+fun <T> ArrayList<T>?.logi() {
     if (!isOpenLog)return
     Log.i(TAG, "logi: --------list 开始打印 ---------")
     if (this.isNullOrEmpty()){
@@ -32,7 +34,7 @@ fun <T> ArrayList<T>.logi() {
     Log.i(TAG, "logi: --------list 结束打印 ---------")
 }
 
-fun <T> ArrayList<T>.loge() {
+fun <T> ArrayList<T>?.loge() {
     if (!isOpenLog)return
     Log.e(TAG, "loge: --------list 开始打印 ---------")
     if (this.isNullOrEmpty()){
@@ -46,6 +48,15 @@ fun <T> ArrayList<T>.loge() {
         Log.e(TAG, "loge: ----------end------------index: "+i)
     }
     Log.e(TAG, "loge: --------list 结束打印 ---------")
+}
+
+//todo showToastSize
+fun <T> ArrayList<T>?.showToastSize(context: Context) {
+    if (this.isNullOrEmpty()){
+        Toast.makeText(context, "size: " + 0, Toast.LENGTH_SHORT).show()
+        return
+    }
+    Toast.makeText(context, "size: " + this.size, Toast.LENGTH_SHORT).show()
 }
 
 
