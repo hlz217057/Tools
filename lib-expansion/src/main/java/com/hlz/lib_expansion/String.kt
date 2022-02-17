@@ -1,16 +1,16 @@
-package com.hlz.lib_expansion
+package com.bjx.bjxcommon.extentions
 
 import android.content.Context
 import android.text.Html
 import android.util.Log
 import android.widget.Toast
+import com.hlz.lib_expansion.isOpenLog
 
 /**
  *防空
  *防越界
  */
 private const val TAG = "String"
-
 
 
 //todo lengthV2 获取字符长度
@@ -91,4 +91,59 @@ fun String?.loge() {
 //todo showToast toast
 fun String?.showToast(context: Context) {
     Toast.makeText(context, "" + this, Toast.LENGTH_SHORT).show()
+}
+
+//todo 限制最大个数
+fun String?.maxLimit(size: Int): String {
+    if (this.isNullOrEmpty()) return ""
+    if (this.length > size) {
+        return this.subSequence(0, size).toString() + "..."
+    }
+    return this
+}
+
+//todo 字符串连接 symbol连接符
+fun stringForAppendSymbol(array: Array<String?>, symbol: String): String {
+    if (array.isNullOrEmpty()) return ""
+    val buffer = StringBuffer()
+    for (item in array) {
+        if (!item.isNullOrEmpty()) {
+            buffer.append(item)
+            buffer.append(symbol)
+        }
+    }
+    val s = buffer.toString()
+    if (!s.isNullOrEmpty()) {
+        return s.substringV2(0, s.length - 1)
+    }
+    return ""
+}
+
+
+fun CharSequence?.toStringV2(defStr: String? = null): String? {
+    if (this.isNullOrEmpty()) return defStr
+    return this.toString()
+}
+fun CharSequence?.toStringNotNull(defStr: String = ""): String {
+    if (this.isNullOrEmpty()) return defStr
+    return this.toString()
+}
+
+fun CharSequence?.countV2(): Int {
+    if (this.isNullOrEmpty()) return 0
+    return this.length
+}
+
+
+fun getBegs(array: Array<String>,separator:String = " | "):String{
+    val buffer = StringBuffer()
+    for (m in array){
+        if (!m.isNullOrEmpty()){
+            buffer.append(m)
+            buffer.append(separator)
+        }
+    }
+    val s = buffer.toString()
+    if (s.isNullOrEmpty())return ""
+    return s.substring(0,s.length-separator.length)
 }
